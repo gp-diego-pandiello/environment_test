@@ -5,7 +5,6 @@ on:
         TARGET_ENV:
           required: true
           type: string
-
 jobs:
   job-to-run-per-env:
     name: 'Job to run per env'
@@ -14,4 +13,4 @@ jobs:
     steps:
       - name: Any Name
         shell: bash
-        run:  echo " ${{ inputs.NAME }}"
+        run:  echo " ${{ vars.NAME }}"
