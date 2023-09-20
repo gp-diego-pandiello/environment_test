@@ -16,4 +16,8 @@ jobs:
         run:  echo " ${{ vars.NAME }}"
       - name: Secret
         shell: bash
-        run:  echo " ${{ secrets.AZURE_CLIENT_ID }}"
+        run: |
+         if [ "${{ secrets.AZURE_CLIENT_ID }}" == "diego" ]; then \
+          echo "Strings are equal" \
+         else \
+          echo "Strings are not equal" \
