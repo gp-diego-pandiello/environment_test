@@ -17,7 +17,5 @@ jobs:
       - name: Secret
         shell: bash
         run: |
-         if [ "${{ secrets.AZURE_CLIENT_ID }}" == "diego" ]; then \
-          echo "Strings are equal" \
-         else \
-          echo "Strings are not equal" \
+         if [ "${{ secrets.AZURE_CLIENT_ID }}" == "diego" ]; then
+            echo "Strings are equal"
