@@ -9,6 +9,7 @@ jobs:
     uses: ./.github/workflows/deploy.yaml
     with:
       TARGET_ENV: dev
+    secrets: inherit
   sandbox:
     needs: [dev]
     uses: ./.github/workflows/deploy.yaml
