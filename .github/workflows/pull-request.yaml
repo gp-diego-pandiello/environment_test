@@ -1,0 +1,15 @@
+name: 'Demo'
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  dev:
+    uses: ./.github/workflows/deploy.yaml
+    with:
+      TARGET_ENV: dev
+  sandbox:
+    uses: ./.github/workflows/deploy.yaml
+    with:
+      TARGET_ENV: sandbox
