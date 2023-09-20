@@ -2,14 +2,15 @@ name: 'Deploy'
 on:
     workflow_call:
       inputs:
-        NAME:
+        TARGET_ENV:
           required: true
           type: string
 
 jobs:
   job-to-run-per-env:
     name: 'Job to run per env'
-    runs-on: ubuntu-latest        
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.TARGET_ENV }}        
     steps:
       - name: Any Name
         shell: bash
