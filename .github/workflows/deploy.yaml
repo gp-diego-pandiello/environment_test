@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.TARGET_ENV }}        
     steps:
-      - name: Any Name
+      - name: Variable
         shell: bash
         run:  echo " ${{ vars.NAME }}"
+      - name: Secret
+        shell: bash
+        run:  echo " ${{ secrets.AZURE_CLIENT_ID }}"
