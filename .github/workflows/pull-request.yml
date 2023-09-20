@@ -1,0 +1,24 @@
+name: 'Demo'
+
+# We run on just PRs 
+# This validate requires full read/write permissions to Azure and we can't do wildcards for the branch name in Azure OIDC federated credentials
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  bicep-unit-tests:
+    name: 'Bicep Unit Tests'
+    environment: ${{ matrix.environment }}
+    runs-on: ubuntu-latest
+    # Bicep What-if / Validate functions also check if your role has permisisons to create the resources so we need full read/write permissions
+    strategy:
+      matrix:
+        # We need to run this on all the environments
+        environment: [sandbox, dev]
+        
+        steps:
+          - name: Any Name
+            shell: bash
+            run:  echo "Hello World"
