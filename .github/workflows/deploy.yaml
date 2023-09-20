@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Any Name
         shell: bash
-        run:  echo " ${{ secrets.AZURE_CLIENT_ID }}"
+        run:  echo " ${{ env.NAME }}"
