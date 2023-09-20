@@ -18,4 +18,4 @@ jobs:
         shell: bash
         run: |
          if [ "${{ secrets.AZURE_CLIENT_ID }}" == "diego" ]; then \
-            echo "Strings are equal"; \
+          echo "Strings are equal"; \
