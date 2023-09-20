@@ -6,11 +6,16 @@ on:
 
 jobs:
   dev:
-    uses: ./.github/workflows/deploy.yaml
-    with:
-      TARGET_ENV: dev
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - uses: ./.github/workflows/deploy.yaml
+        with:
+          NAME: ${{ env.NAME }}
   sandbox:
-    uses: ./.github/workflows/deploy.yaml
-    needs: [dev]
-    with:
-      TARGET_ENV: sandbox
+    runs-on: ubuntu-latest
+    environment: sandbox
+    steps:
+      - uses: ./.github/workflows/deploy.yaml
+        with:
+          NAME: ${{ env.NAME }}
