@@ -15,6 +15,7 @@ jobs:
   sandbox:
     runs-on: ubuntu-latest
     environment: sandbox
+    needs: [dev]
     steps:
       - uses: ./.github/workflows/deploy.yaml
         with:
