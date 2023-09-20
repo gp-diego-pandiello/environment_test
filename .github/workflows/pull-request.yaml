@@ -11,5 +11,6 @@ jobs:
       TARGET_ENV: dev
   sandbox:
     uses: ./.github/workflows/deploy.yaml
+    needs: [dev]
     with:
       TARGET_ENV: sandbox
